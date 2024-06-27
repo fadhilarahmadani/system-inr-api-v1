@@ -1,7 +1,7 @@
-/app/Http/Controllers/AuthController.php
-/app/Models/Auth.php
-/database/factories/AuthFactory.php
-/database/seeders/AuthSeeder.php
+# /app/Http/Controllers/AuthController.php
+# /app/Models/Auth.php
+# /database/factories/AuthFactory.php
+# /database/seeders/AuthSeeder.php
 
 # /app/Models/Donatur.php
 # /app/Http/Controllers/Api
