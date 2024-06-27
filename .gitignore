@@ -3,11 +3,11 @@
 /database/factories/AuthFactory.php
 /database/seeders/AuthSeeder.php
 
-/app/Models/Donatur.php
-/app/Http/Controllers/Api
-/app/Http/Controllers/Api/DonaturController.php
-/database/factories/DonaturFactory.php
-/database/seeders/DonaturSeeder.php
+# /app/Models/Donatur.php
+# /app/Http/Controllers/Api
+# /app/Http/Controllers/Api/DonaturController.php
+# /database/factories/DonaturFactory.php
+# /database/seeders/DonaturSeeder.php
 
 /.phpunit.cache
 /node_modules
