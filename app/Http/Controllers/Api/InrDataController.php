@@ -31,7 +31,8 @@ class InrDataController extends Controller
             'auth_id' => 'Required',
             'name' => 'Required',
             'photo_profile' => 'Required',
-            'class' => 'required'
+            'class' => 'required',
+            'status' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -47,6 +48,7 @@ class InrDataController extends Controller
         $data->name = $request->name;
         $data->photo_profile = $request->photo_profile;
         $data->class = $request->class;
+        $data->status = $request->status;
         $post = $data->save();
 
         return response()->json([
@@ -92,7 +94,8 @@ class InrDataController extends Controller
             'auth_id' => 'Required',
             'name' => 'Required',
             'photo_profile' => 'Required',
-            'class' => 'required'
+            'class' => 'required',
+            'status' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -108,6 +111,7 @@ class InrDataController extends Controller
         $data->name = $request->name;
         $data->photo_profile = $request->photo_profile;
         $data->class = $request->class;
+        $data->status = $request->status;
         $post = $data->save();
 
         return response()->json([

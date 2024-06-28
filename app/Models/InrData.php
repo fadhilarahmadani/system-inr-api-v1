@@ -13,7 +13,8 @@ class InrData extends Model
         'auth_id',
         'nama',
         'photo_profile',
-        'class'
+        'class',
+        'status'
     ];
     public function auth()
     {

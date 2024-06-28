@@ -20,4 +20,8 @@ class Auth extends Model
     {
         return $this->hasOne(InrData::class);
     }
+    public function recruiterData()
+    {
+        return $this->hasOne(RecruiterData::class);
+    }
 }
