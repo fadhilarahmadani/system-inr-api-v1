@@ -23,38 +23,9 @@ class InrDataController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function createInrData(Request $request)
     {
-        $data = new InrData;
-
-        $rules = [
-            'auth_id' => 'Required',
-            'name' => 'Required',
-            'photo_profile' => 'Required',
-            'class' => 'required',
-            'status' => 'required'
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 'False',
-                'messege' => 'Gagal Memasukkan Data',
-                'data' => $validator->errors()
-            ], 404);
-        }
-
-
-        $data->auth_id = $request->auth_id;
-        $data->name = $request->name;
-        $data->photo_profile = $request->photo_profile;
-        $data->class = $request->class;
-        $data->status = $request->status;
-        $post = $data->save();
-
-        return response()->json([
-            'status' => 'True',
-            'messege' => 'Data Tersimpan',
-        ], 200);
+       //
     }
 
     /**

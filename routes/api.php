@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\DonaturController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\InrDataController;
 use App\Http\Controllers\api\RecruiterDataController;
 
@@ -11,11 +11,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-// Route::get('/donatur',[DonaturController::class,'index']);
-// Route::get('/donatur/{id}',[DonaturController::class,'show']);
-// Route::post('/donatur',[DonaturController::class,'store']);
-// Route::put('/donatur/{id}',[DonaturController::class,'update']);
-// Route::delete('/donatur/{id}',[DonaturController::class,'destroy']);
+// Route::get('/login', [AuthController::class, 'index']);
+Route::post('/create-auth', [AuthController::class, 'createAuth']);
+// Route::post('/auth', [AuthController::class, 'auth']);
 
 Route::apiResource('donatur', DonaturController::class);
 
