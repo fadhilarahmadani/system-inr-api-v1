@@ -11,7 +11,7 @@ class InrData extends Model
     protected $table = 'inr_data';
     protected $fillable = [
         'auth_id',
-        'nama',
+        'name',
         'photo_profile',
         'class',
         'status'

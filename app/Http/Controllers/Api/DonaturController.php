@@ -30,33 +30,21 @@ class DonaturController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function createDonatur(Request $request)
     {
-        $data = new Donatur;
-
-        $rules = [
-            'auth_id' => 'Required',
-            'status' => 'Required',
-            'total_price' => 'Required',
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 'False',
-                'messege' => 'Gagal Memasukkan Data',
-                'data' => $validator->errors()
-            ], 404);
-        }
-
-
-        $data->auth_id = $request->auth_id;
-        $data->status = $request->status;
-        $data->total_price = $request->total_price;
-        $post = $data->save();
-
+        $request->auth_id;
+        $request-> status;
+        $request-> total_price;
+        Donatur::create([
+            'auth_id' => $request->auth_id,
+            'status' => $request->status,
+            'total_price' => $request->total_price
+        ]);
         return response()->json([
             'status' => 'True',
-            'messege' => 'Data Tersimpan',
+            'message' => 'Sucess create data InrData',
+            'code' => 200,
+            'data' => []
         ], 200);
     }
 

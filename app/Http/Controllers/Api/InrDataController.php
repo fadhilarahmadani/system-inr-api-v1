@@ -25,7 +25,24 @@ class InrDataController extends Controller
      */
     public function createInrData(Request $request)
     {
-       //
+        $request->auth_id;
+        $request-> name;
+        $request-> photo_profile;
+        $request-> class;
+        $request-> status;
+        InrData::create([
+            'auth_id' => $request->auth_id,
+            'name' => $request->name,
+            'photo_profile' => $request->photo_profile,
+            'class' => $request->class,
+            'status' => $request->status
+        ]);
+        return response()->json([
+            'status' => 'True',
+            'message' => 'Sucess create data InrData',
+            'code' => 200,
+            'data' => []
+        ], 200);
     }
 
     /**

@@ -16,10 +16,12 @@ Route::post('/create-auth', [AuthController::class, 'createAuth']);
 // Route::post('/auth', [AuthController::class, 'auth']);
 
 Route::apiResource('donatur', DonaturController::class);
+Route::post('/donatur', [DonaturController::class, 'createDonatur']);
+
 
 Route::get('/inrdata', [InrDataController::class, 'index']);
 Route::get('/inrdata/{id}', [InrDataController::class, 'show']);
-Route::post('/inrdata', [InrDataController::class, 'store']);
+Route::post('/inrdata', [InrDataController::class, 'createInrdata']);
 Route::put('/inrdata/{id}', [InrDataController::class, 'update']);
 Route::delete('/inrdata/{id}', [InrDataController::class, 'destroy']);
 

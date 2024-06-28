@@ -20,7 +20,8 @@ return new class extends Migration
                   ->onDelete('CASCADE')
                   ->onUpdate('CASCADE');
             $table->enum("status", ["active", "inactive"]);
-            $table->bigInteger("total_price");
+            $table->bigInteger("total_price")->default(0);
+            $table->string('type'); //(10.000, 20.000, 30.000)
             $table->timestamps();
             $table->softDeletes();
 

@@ -19,7 +19,7 @@ class CreateInrDataTable extends Migration
             $table->string('name',50);
             $table->string('photo_profile', 100);
             $table->string('class', 50);
-            $table->enum("status", ["active", "inactive","cut off"]);
+            $table->enum('status', ["active", "inactive","cut off"]);
             $table->timestamps();
             $table->softDeletes();
 
