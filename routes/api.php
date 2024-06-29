@@ -26,3 +26,4 @@ Route::put('/inrdata/{id}', [InrDataController::class, 'update']);
 Route::delete('/inrdata/{id}', [InrDataController::class, 'destroy']);
 
 Route::get('/recruiter', [RecruiterDataController::class, 'index']);
+Route::post('/recruiter', [RecruiterDataController::class, 'createRecruiterData']);

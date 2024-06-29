@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('photo_profile', 100);
             $table->string('class', 50);
             $table->enum("status", ["accepted", "rejected"]);
-            $table->string("type_proses", 50 );
+            $table->string('type_proses', 50 );
             $table->timestamps();
             $table->softDeletes();
         });

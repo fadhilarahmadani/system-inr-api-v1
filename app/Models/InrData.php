@@ -18,6 +18,6 @@ class InrData extends Model
     ];
     public function auth()
     {
-        return $this->belongsTo(InrData::class, 'auth_id'); //belongsto karena inr data yang punya id pk jadi dia yag memanggil auth
+        return $this->belongsTo(Auth::class, 'auth_id'); //belongsto karena inr data yang punya id pk jadi dia yag memanggil auth
     }
 }

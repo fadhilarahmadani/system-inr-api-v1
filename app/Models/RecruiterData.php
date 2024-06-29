@@ -11,7 +11,7 @@ class RecruiterData extends Model
     protected $table = 'recruiter_data';
     protected $fillable = [
         'auth_id',
-        'nama',
+        'name',
         'photo_profile',
         'class',
         'status',

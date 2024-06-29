@@ -5,13 +5,11 @@ namespace App\Http\Controllers\api;
 use Illuminate\Http\Request;
 use App\Models\RecruiterData;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 
 class RecruiterDataController extends Controller
 {
     public function index()
     {
-        //tes
         $data = RecruiterData::with('auth')->get();
         return response()->json([
             'status' => 'True',
@@ -21,36 +19,27 @@ class RecruiterDataController extends Controller
         ], 200);
     }
 
-    public function store(Request $request)
+    public function createRecruiterData(Request $request)
     {
-        $data = new RecruiterData();
-
-        $rules = [
-            'auth_id' => 'Required',
-            'name' => 'Required',
-            'photo_profile' => 'Required',
-            'class' => 'required',
-            'status' => 'required',
-            'type_proses' => 'required'
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 'False',
-                'messege' => 'Gagal Memasukkan Data',
-                'data' => $validator->errors()
-            ], 404);
-        }
-
-
-        $data->auth_id = $request->auth_id;
-        $data->status = $request->status;
-        $data->total_price = $request->total_price;
-        $post = $data->save();
-
+        $request->auth_id;
+        $request->name;
+        $request->photo_profile;
+        $request->class;
+        $request->status;
+        $request->type_proses;
+        RecruiterData::create([
+            'auth_id' => $request->auth_id,
+            'name' => $request->name,
+            'photo_profile' => $request->photo_profile,
+            'class' => $request->class,
+            'status' => $request->status,
+            'type_proses' => $request->type_proses
+        ]);
         return response()->json([
             'status' => 'True',
-            'messege' => 'Data Tersimpan',
+            'message' => 'Sucess create Recruiter Data',
+            'code' => 200,
+            'data' => []
         ], 200);
     }
 }
