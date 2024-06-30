@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Models\PriceGroupNotes;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\DonaturController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DonaturController;
 use App\Http\Controllers\Api\InrDataController;
 use App\Http\Controllers\api\RecruiterDataController;
+use App\Http\Controllers\API\PriceGroupNotesController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -27,3 +29,6 @@ Route::delete('/inrdata/{id}', [InrDataController::class, 'destroy']);
 
 Route::get('/recruiter', [RecruiterDataController::class, 'index']);
 Route::post('/recruiter', [RecruiterDataController::class, 'createRecruiterData']);
+
+Route::get('/pricegroup', [PriceGroupNotesController::class, 'index']);
+Route::post('/pricegroup', [PriceGroupNotesController::class, 'createPriceGroupNotes']);
