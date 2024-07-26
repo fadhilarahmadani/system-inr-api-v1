@@ -8,17 +8,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
 
 class Auth extends Authenticatable implements JWTSubject
 {
-    use HasFactory;
+    use HasFactory, Notifiable, HasApiTokens;
 
     protected $table = "auths";
     protected $fillable = [
         'nri',
         'password',
     ];
-    
+
 
     public function donatur()
     {

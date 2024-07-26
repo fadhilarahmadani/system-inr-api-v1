@@ -9,13 +9,12 @@ use App\Http\Controllers\Api\InrDataController;
 use App\Http\Controllers\api\RecruiterDataController;
 use App\Http\Controllers\API\PriceGroupNotesController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
-// Route::get('/login', [AuthController::class, 'index']);
-Route::post('/create-auth', [AuthController::class, 'createAuth']);
-// Route::post('/auth', [AuthController::class, 'auth']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/auth', [AuthController::class, 'index'])->name('auth.index');
+Route::post('/auth/create', [AuthController::class, 'createAuth'])->name('auth.create');
+
 
 Route::apiResource('donatur', DonaturController::class);
 Route::post('/donatur', [DonaturController::class, 'createDonatur']);
